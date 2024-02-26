@@ -9,3 +9,25 @@ w
 Gdiscorver/src/main/java/com/example/discorver/DiscorverApplication.java,2\b\2be0aacac75419272e0226fd3848d15180189511
 °
 qAuthentificationService/src/main/java/com/example/AuthentificationService/AuthentificationServiceApplication.java,4\7\475653a09f66d46a33f0597d4a889735d48524cd
+O
+AuthentificationService/pom.xml,9\c\9c1bd6376e3aa9f4d5f3476a2a424a3e2e7ca1d2
+ê
+`AuthentificationService/src/main/java/com/example/AuthentificationService/config/AuthConfig.java,f\4\f492e1af641f4e9749e50c0d15980a685f15f324
+é
+^AuthentificationService/src/main/java/com/example/AuthentificationService/dto/AuthRequest.java,8\7\87cfddb7fe78c47348d84f4a7d9e5f7f2fb83295
+ó
+gAuthentificationService/src/main/java/com/example/AuthentificationService/config/CustomUserDetails.java,a\b\ab89e8dbf7607bb484503d81e232908448f0ea29
+ò
+hAuthentificationService/src/main/java/com/example/AuthentificationService/controller/AuthController.java,4\f\4f04f365f4751b589a326a17730e915eaa1a457e
+¢
+rAuthentificationService/src/main/java/com/example/AuthentificationService/repository/UserCredentialRepository.java,2\9\29f467aafdab0a49d8552e54e85972d5a8885128
+í
+bAuthentificationService/src/main/java/com/example/AuthentificationService/service/AuthService.java,b\d\bd80ffd8288bc340378afc1805906101a691044e
+ë
+aAuthentificationService/src/main/java/com/example/AuthentificationService/service/JwtService.java,c\0\c08160daed2aed0e27b6b3bc0c29c7004084b292
+î
+dAuthentificationService/src/main/java/com/example/AuthentificationService/entity/UserCredential.java,1\d\1d4425f6308220db6c801a6e0d607d8bc18d1418
+û
+nAuthentificationService/src/main/java/com/example/AuthentificationService/config/CustomUserDetailsService.java,5\0\503c9f70f0195b625ef0c3f319391eaea14e35b9
+Ä
+PcofingServer/src/main/java/com/example/cofingServer/CofingServerApplication.java,4\d\4dbd6fa5f1bc18d86d9948698ea582cc001efcd6
