@@ -1,7 +1,7 @@
 spring:
+  application:
+    name: partage
   config:
     import: optional:configserver:http://localhost:8086
-  application:
-    name: discovery
-server:
-  port: 8761
+
+

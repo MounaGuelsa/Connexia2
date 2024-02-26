@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/authentification
+    url: jdbc:postgresql://localhost:5432/partage
     username: postgres
     password: newlife@22
   jpa:
@@ -14,11 +14,10 @@ spring:
     jpa:
       repositories:
         enabled: true
-server:
-  port: 8089
 eureka:
   client:
     service-url:
       defaultZone : http://localhost:8761/eureka/
-debug: true
+server:
+  port: 8088
 

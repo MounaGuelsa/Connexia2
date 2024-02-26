@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="cofingServer" />
         <module name="AuthentificationService" />
+        <module name="partage" />
         <module name="Gateway" />
         <module name="discorver" />
       </profile>
@@ -20,6 +21,7 @@
       <module name="Gateway" options="-parameters" />
       <module name="cofingServer" options="-parameters" />
       <module name="discorver" options="-parameters" />
+      <module name="partage" options="-parameters" />
     </option>
   </component>
 </project>
