@@ -1,4 +1,7 @@
 package com.example.partage.repositories;
 
-public interface PartageRepository extends org.springframework.data.jpa.repository.JpaRepository<com.example.partage.entities.Partage, java.lang.Long> {
+import com.example.partage.entities.Partage;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PartageRepository extends JpaRepository<Partage, Long> {
 }

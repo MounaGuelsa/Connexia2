@@ -31,3 +31,13 @@ dAuthentificationService/src/main/java/com/example/AuthentificationService/entit
 nAuthentificationService/src/main/java/com/example/AuthentificationService/config/CustomUserDetailsService.java,5\0\503c9f70f0195b625ef0c3f319391eaea14e35b9
 €
 PcofingServer/src/main/java/com/example/cofingServer/CofingServerApplication.java,4\d\4dbd6fa5f1bc18d86d9948698ea582cc001efcd6
+{
+Kpartage/src/main/java/com/example/partage/controller/partageController.java,7\a\7af6457192eb55b080f8629a81fe40bf5fcb4f96
+o
+?partage/src/main/java/com/example/partage/entities/Partage.java,4\6\46fe451e68d7b0d21a7d2a8bd5bb1fcabdbeb6a1
+v
+Fpartage/src/main/java/com/example/partage/services/PartageService.java,3\1\31c43690ca81baee8a1ce4a6959636d52bc5c80e
+}
+Mpartage/src/main/java/com/example/partage/repositories/PartageRepository.java,c\1\c146be13c4e5117ff2b5f3499c1e6d5022626040
+n
+>partage/src/main/java/com/example/partage/dtos/PartageDto.java,c\9\c9c8959b29ff391401cc7120c87df96fa7b8c7e6

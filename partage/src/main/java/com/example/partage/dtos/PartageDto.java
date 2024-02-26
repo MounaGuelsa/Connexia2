@@ -1,7 +1,16 @@
 package com.example.partage.dtos;
 
-/**
- * DTO for {@link com.example.partage.entities.Partage}
- */
-public class PartageDto {
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.Value;
+
+import java.io.Serializable;
+
+@Data
+@NoArgsConstructor
+public class PartageDto implements Serializable {
+    Long id;
+    long idPartageur;
+    long idPost;
+    String PostUrl;
 }
