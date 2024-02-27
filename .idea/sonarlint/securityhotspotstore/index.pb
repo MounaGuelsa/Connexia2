@@ -63,3 +63,9 @@ w
 Gpartage/src/main/java/com/example/partage/config/ModelMapperConfig.java,3\5\3573a39cdd3ef22951797236f9ccbb62b15484bb
 s
 Cusers/src/main/java/com/example/users/config/ModelMapperConfig.java,e\7\e7584249f8936cf37355c2d7bd09b7c49873d155
+{
+Kpartage/src/main/java/com/example/partage/controller/PartageController.java,f\c\fc276f43103814c3467f16ec0987f19321675a27
+p
+@users/src/main/java/com/example/users/clients/partageClient.java,3\c\3cd7a7f72409ca1bff5c2ecf6e1b9534e538d292
+o
+?PostService/src/main/java/com/yassin/clients/partageClient.java,4\d\4d43be8a1edbfde93f1ae68392527ef0d899959f

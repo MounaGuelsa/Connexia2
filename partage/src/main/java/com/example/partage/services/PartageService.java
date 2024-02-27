@@ -38,6 +38,18 @@ public class PartageService {
         Partage savedPartage = partageRepository.save(partage);
         return modelMapper.map(savedPartage, PartageDto.class);
     }
+    public List<PartageDto> findAllByIdPartageur(Long id) {
+        List<Partage> partages = partageRepository.findAllByIdPartageur(id);
+        return partages.stream()
+                .map(partage -> modelMapper.map(partage, PartageDto.class))
+                .collect(Collectors.toList());
+    }
+    public List<PartageDto> findAllByIdPost(Long id) {
+        List<Partage> partages = partageRepository.findAllByIdPost(id);
+        return partages.stream()
+                .map(partage -> modelMapper.map(partage, PartageDto.class))
+                .collect(Collectors.toList());
+    }
 
     // Méthode pour supprimer un partage par son ID
     public void deletePartageById(Long id) {
