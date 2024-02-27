@@ -1,13 +1,13 @@
-package com.yassin;
+package org.example.group;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpervicePublicationContenusApplication {
+public class GroupApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpervicePublicationContenusApplication.class, args);
+		SpringApplication.run(GroupApplication.class, args);
 	}
 
 }
