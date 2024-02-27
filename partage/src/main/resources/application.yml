@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: partage
+  config:
+    import: optional:configserver:http://localhost:8086
+
+

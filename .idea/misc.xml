@@ -7,7 +7,13 @@
         <option value="$PROJECT_DIR$/Gateway/pom.xml" />
         <option value="$PROJECT_DIR$/discorver/pom.xml" />
         <option value="$PROJECT_DIR$/cofingServer/pom.xml" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Group/pom.xml" />
+=======
+        <option value="$PROJECT_DIR$/AuthentificationService/pom.xml" />
+        <option value="$PROJECT_DIR$/partage/pom.xml" />
+        <option value="$PROJECT_DIR$/users/pom.xml" />
+>>>>>>> 68bbca38f84a57af9de99624d20bdb404a83f003
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />

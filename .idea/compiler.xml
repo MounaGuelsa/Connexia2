@@ -8,8 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cofingServer" />
+<<<<<<< HEAD
         <module name="Group" />
+=======
+        <module name="AuthentificationService" />
+        <module name="partage" />
+>>>>>>> 68bbca38f84a57af9de99624d20bdb404a83f003
         <module name="Gateway" />
+        <module name="users" />
         <module name="discorver" />
       </profile>
     </annotationProcessing>
@@ -19,11 +25,14 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AuthentificationService" options="-parameters" />
       <module name="Gateway" options="-parameters" />
       <module name="Group" options="-parameters" />
       <module name="cofingServer" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="discorver" options="-parameters" />
+      <module name="partage" options="-parameters" />
+      <module name="users" options="-parameters" />
     </option>
   </component>
 </project>
