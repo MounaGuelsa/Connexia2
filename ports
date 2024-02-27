@@ -1,4 +1,5 @@
-eurika : 8761
+eureka : 8761
 config : 8086
 users   : 8090
 partage : 8088
+PostService : 8888

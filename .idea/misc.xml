@@ -7,15 +7,22 @@
         <option value="$PROJECT_DIR$/Gateway/pom.xml" />
         <option value="$PROJECT_DIR$/discorver/pom.xml" />
         <option value="$PROJECT_DIR$/cofingServer/pom.xml" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/Group/pom.xml" />
+=======
         <option value="$PROJECT_DIR$/AuthentificationService/pom.xml" />
         <option value="$PROJECT_DIR$/partage/pom.xml" />
         <option value="$PROJECT_DIR$/users/pom.xml" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/PostService/pom.xml" />
+=======
+>>>>>>> 68bbca38f84a57af9de99624d20bdb404a83f003
+>>>>>>> 1b28c44477f614c23bb1a3789abe5b7159838247
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="corretto-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ProjectType">
