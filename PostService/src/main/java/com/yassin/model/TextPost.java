@@ -15,10 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TextPost extends Post {
 
-    @NotBlank
     private String text;
-
-    @NotNull
-    boolean isDeleted;
+    private boolean isDeleted;
 
 }

@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpervicePublicationContenusApplication {
+public class ServicePublicationContentApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpervicePublicationContenusApplication.class, args);
+		SpringApplication.run(ServicePublicationContentApplication.class, args);
 	}
 
 }
