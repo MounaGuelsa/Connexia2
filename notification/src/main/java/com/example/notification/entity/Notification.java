@@ -15,6 +15,6 @@ public class Notification {
     @Column(name = "id", nullable = false)
     private Long idNotif;
     private Long idReceiver;
-    private Long message;
+    private String message;
 
 }
