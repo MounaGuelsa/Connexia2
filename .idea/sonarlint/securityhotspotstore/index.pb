@@ -85,3 +85,11 @@ w
 GPostService/src/main/java/com/yassin/controller/TextPostController.java,1\d\1d513fd89598766e250740ba6b8425fc0f2a6e5a
 x
 HPostService/src/main/java/com/yassin/controller/ImagePostController.java,d\6\d60f775514104c306ee1a20d630e4258b729af16
+o
+?Gateway/src/main/java/com/example/Gateway/config/AppConfig.java,9\0\901fbbf21f3d1b413d4469ba88b346e7be439c20
+z
+JGateway/src/main/java/com/example/Gateway/filter/AuthenticationFilter.java,7\3\73e8760eaeb0d78fd5bd2e1c15bbaac667aac31f
+t
+DGateway/src/main/java/com/example/Gateway/filter/RouteValidator.java,2\8\28c1c855ecf70cb1ee3b9b5bf24628283a413c01
+k
+;Gateway/src/main/java/com/example/Gateway/util/JwtUtil.java,3\0\306bf28eb5f9183c8f80b3142fb2e72d60a7f6d5
