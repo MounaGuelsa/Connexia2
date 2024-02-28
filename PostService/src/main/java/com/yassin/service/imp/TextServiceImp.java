@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,6 +26,7 @@ public class TextServiceImp implements ITextService {
     public TextPostDto createPost(TextPostDto textPostDto) {
         validation(textPostDto);
         TextPost textPostToSave = modelMapper.map(textPostDto, TextPost.class);
+        textPostToSave.setPublishDate(LocalDateTime.now());
         TextPost textPost = textPostRepo.save(textPostToSave);
         return modelMapper.map(textPost, TextPostDto.class);
     }

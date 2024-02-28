@@ -28,14 +28,20 @@ public class Post {
     private Long userId;
 
     @PastOrPresent
-    @JsonFormat(pattern = "MM-dd-yyyy")
     private LocalDateTime publishDate;
 
     @Min(0)
     private int reactions;
 
     @ElementCollection
-    private List<String> comments;
+    private List<Long> idComments;
+
+    @NotNull
+    private boolean shared = false;
+
+    @NotNull
+    private boolean deleted = false;
+
 
 
 }
