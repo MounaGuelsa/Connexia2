@@ -9,8 +9,8 @@ server:
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/group
-    username: postgres
-    password: 0000
+    username: mariam
+    password: 0572ml
   jpa:
     show-sql: true
     properties:

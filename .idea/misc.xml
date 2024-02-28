@@ -11,15 +11,7 @@
         <option value="$PROJECT_DIR$/AuthentificationService/pom.xml" />
         <option value="$PROJECT_DIR$/partage/pom.xml" />
         <option value="$PROJECT_DIR$/users/pom.xml" />
-<<<<<<< HEAD
         <option value="$PROJECT_DIR$/PostService/pom.xml" />
-=======
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/PostService/pom.xml" />
-=======
->>>>>>> 68bbca38f84a57af9de99624d20bdb404a83f003
->>>>>>> 1b28c44477f614c23bb1a3789abe5b7159838247
->>>>>>> 505cbd731a3ea39d2fa600c78b9103e304fe2f85
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />

@@ -8,6 +8,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class GroupServiceImp implements GroupService {
 
@@ -15,16 +18,33 @@ public class GroupServiceImp implements GroupService {
     GroupRepository groupRepository;
     @Autowired
     ModelMapper modelMapper;
+
+    @Override
+    public List<GroupDTO> showGroups() {
+        List<Group> groups=groupRepository.findByDeletedFalse();
+        return groups.stream().map(g->modelMapper.map(g,GroupDTO.class)).collect(Collectors.toList());
+    }
+
+    @Override
+    public GroupDTO getGroupById(Long id) {
+        return modelMapper.map(groupRepository.findById(id),GroupDTO.class);
+    }
+
+    @Override
+    public GroupDTO updateGroup(GroupDTO groupDTO) {
+        return modelMapper.map(groupRepository.save(modelMapper.map(groupDTO, Group.class)),GroupDTO.class);
+    }
+
     @Override
     public GroupDTO addGroup(GroupDTO groupDTO) {
-        Group group=groupRepository.save(modelMapper.map(groupDTO,Group.class));
+        Group group=groupRepository.save(modelMapper.map(groupDTO, Group.class));
         return modelMapper.map(group, GroupDTO.class);
     }
 
     @Override
     public Boolean deleteGroup(GroupDTO groupDTO) {
-        groupDTO.setIs_deleted(Boolean.TRUE);
-        Group group=groupRepository.save(modelMapper.map(groupDTO,Group.class));
-        return group.getIs_deleted();
+        groupDTO.setDeleted(Boolean.TRUE);
+        Group group=groupRepository.save(modelMapper.map(groupDTO, Group.class));
+        return group.getDeleted();
     }
 }

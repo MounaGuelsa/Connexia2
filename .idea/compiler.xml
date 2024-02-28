@@ -8,16 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cofingServer" />
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        <module name="Group" />
-=======
-        <module name="AuthentificationService" />
->>>>>>> 1b28c44477f614c23bb1a3789abe5b7159838247
->>>>>>> 505cbd731a3ea39d2fa600c78b9103e304fe2f85
         <module name="partage" />
         <module name="Group" />
         <module name="Gateway" />
@@ -27,23 +17,13 @@
         <module name="discorver" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="demo" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="AuthentificationService" options="-parameters" />
       <module name="Gateway" options="-parameters" />
-<<<<<<< HEAD
-      <module name="PostService" options="-parameters" />
-=======
       <module name="Group" options="-parameters" />
-<<<<<<< HEAD
       <module name="PostService" options="-parameters" />
-=======
->>>>>>> 1b28c44477f614c23bb1a3789abe5b7159838247
->>>>>>> 505cbd731a3ea39d2fa600c78b9103e304fe2f85
       <module name="cofingServer" options="-parameters" />
       <module name="discorver" options="-parameters" />
       <module name="partage" options="-parameters" />
