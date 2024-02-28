@@ -1,0 +1,25 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    server-url :
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 8090
+spring:
+  application:
+    name: amis
+
+  config:
+    import: optional:configserver:http://localhost:8888
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/amis
+    username: postgres
+    password: Kaiou
+  jpa:
+    hibernate:
+      ddl-auto: create
+      database: postgresql
+      database-platform: org.hibernate.dialect.PostgresSQLDialect

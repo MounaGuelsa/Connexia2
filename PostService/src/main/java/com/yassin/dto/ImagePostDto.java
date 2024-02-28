@@ -1,5 +1,6 @@
 package com.yassin.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -35,6 +36,7 @@ public class ImagePostDto {
     private Long userId;
 
     @PastOrPresent
+    @JsonFormat(pattern = "MM-dd-yyyy")
     private LocalDateTime publishDate;
 
     @Min(0)

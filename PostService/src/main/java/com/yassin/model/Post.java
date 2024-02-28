@@ -1,5 +1,6 @@
 package com.yassin.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
@@ -10,7 +11,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @MappedSuperclass
@@ -28,6 +28,7 @@ public class Post {
     private Long userId;
 
     @PastOrPresent
+    @JsonFormat(pattern = "MM-dd-yyyy")
     private LocalDateTime publishDate;
 
     @Min(0)

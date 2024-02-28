@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ImagePostRepo extends JpaRepository<ImagePost, Long> {
-    List<ImagePost> findByDeletedFalse();
     Optional<ImagePost> findByIdAndDeletedFalse(Long id);
+    List<ImagePost> findAllByDeletedFalse();
+    List<ImagePost> findAllByUserIdAndDeletedFalse(Long userId);
 }
