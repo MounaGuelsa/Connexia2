@@ -1,12 +1,12 @@
-package com.example.Mantouji.services.Impl;
+package com.example.commentaire.services;
 
-import com.example.Mantouji.dtos.ComentaireDto;
-import com.example.Mantouji.entties.Comentaire;
-import com.example.Mantouji.repositories.ComentaireRepository;
-import com.example.Mantouji.services.ComentaireService;
+import com.example.commentaire.dto.ComentaireDto;
+import com.example.commentaire.entity.Comentaire;
+import com.example.commentaire.repository.ComentaireRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.modelmapper.ModelMapper;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -23,8 +23,8 @@ public class ComentaireServiceImpl implements ComentaireService {
         this.modelMapper = modelMapper;
     }
     @Override
-    public List<ComentaireDto> getAllComentaires() {
-        List<Comentaire> comentaires = comentaireRepository.findAllByIsdeletedFalse();
+    public List<ComentaireDto> getAllComentaires(long id) {
+        List<Comentaire> comentaires = comentaireRepository.findAllById_post(id);
         return comentaires.stream()
                 .map(comentaire -> modelMapper.map(comentaire, ComentaireDto.class))
                 .collect(Collectors.toList());

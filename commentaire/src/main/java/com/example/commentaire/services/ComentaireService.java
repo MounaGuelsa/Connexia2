@@ -1,11 +1,12 @@
-package com.example.Mantouji.services;
+package com.example.commentaire.services;
 
-import com.example.Mantouji.dtos.ComentaireDto;
+
+import com.example.commentaire.dto.ComentaireDto;
 
 import java.util.List;
 
 public interface ComentaireService {
-    default List<ComentaireDto> getAllComentaires(){
+    default List<ComentaireDto> getAllComentaires(long id){
         return null;
     }
     default ComentaireDto getComentaireById(Long id){
