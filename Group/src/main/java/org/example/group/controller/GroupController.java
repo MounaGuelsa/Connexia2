@@ -21,6 +21,11 @@ public class GroupController {
         List<GroupDTO> groupDTOS=groupServiceImp.showGroups();
         return new ResponseEntity<>(groupDTOS, HttpStatus.OK);
     }
+    @GetMapping("/find-group-by-admin-id/{adminId}")
+    public ResponseEntity<List<GroupDTO>> findGroupByAdmin(@PathVariable Long adminId){
+        List<GroupDTO> groupDTOS=groupServiceImp.findGroupByAdmin(adminId);
+        return new ResponseEntity<>(groupDTOS, HttpStatus.OK);
+    }
     @GetMapping("/{id}")
     public ResponseEntity<GroupDTO> getGroup(@PathVariable(value = "id") Long group_id){
         GroupDTO groupDTO=groupServiceImp.getGroupById(group_id);

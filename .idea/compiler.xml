@@ -10,13 +10,11 @@
         <module name="cofingServer" />
         <module name="partage" />
         <module name="Group" />
-        <module name="partage" />
-        <module name="cofingServer" />
-        <module name="Group" />
         <module name="notification" />
         <module name="Gateway" />
         <module name="PostService" />
         <module name="AuthentificationService" />
+        <module name="group-user" />
         <module name="users" />
         <module name="discorver" />
       </profile>
@@ -30,6 +28,7 @@
       <module name="PostService" options="-parameters" />
       <module name="cofingServer" options="-parameters" />
       <module name="discorver" options="-parameters" />
+      <module name="group-user" options="-parameters" />
       <module name="notification" options="-parameters" />
       <module name="partage" options="-parameters" />
       <module name="users" options="-parameters" />

@@ -26,6 +26,12 @@ public class GroupServiceImp implements GroupService {
     }
 
     @Override
+    public List<GroupDTO> findGroupByAdmin(Long adminId) {
+        List<Group> groups=groupRepository.findGroupByAdmin(adminId);
+        return groups.stream().map(g->modelMapper.map(g,GroupDTO.class)).collect(Collectors.toList());
+    }
+
+    @Override
     public GroupDTO getGroupById(Long id) {
         return modelMapper.map(groupRepository.findById(id),GroupDTO.class);
     }

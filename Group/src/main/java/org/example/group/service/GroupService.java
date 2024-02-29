@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface GroupService {
     List<GroupDTO> showGroups();
+    List<GroupDTO> findGroupByAdmin(Long admin_id);
     GroupDTO getGroupById(Long id);
     GroupDTO updateGroup(GroupDTO groupDTO);
     GroupDTO addGroup(GroupDTO group);
