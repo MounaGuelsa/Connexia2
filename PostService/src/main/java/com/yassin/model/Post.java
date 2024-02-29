@@ -33,8 +33,8 @@ public class Post {
     @Min(0)
     private int reactions;
 
-    @ElementCollection
-    private List<Long> idComments;
+ /*   @ElementCollection
+    private List<Long> idComments;*/
 
     @NotNull
     private boolean shared = false;

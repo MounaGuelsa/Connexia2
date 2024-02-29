@@ -1,14 +1,15 @@
 package com.yassin.service.imp;
 
-import com.yassin.dto.ImagePostDto;
+import com.example.commentaire.dto.ComentaireDto;
+import com.example.commentaire.services.ComentaireServiceImpl;
 import com.yassin.dto.TextPostDto;
-import com.yassin.model.ImagePost;
 import com.yassin.model.TextPost;
 import com.yassin.repo.TextPostRepo;
 import com.yassin.service.ITextService;
 import jakarta.ws.rs.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -21,6 +22,8 @@ public class TextServiceImp implements ITextService {
 
     private final ModelMapper modelMapper;
     private final TextPostRepo textPostRepo;
+    private ComentaireServiceImpl commentService;
+
 
     @Override
     public TextPostDto createPost(TextPostDto textPostDto) {
@@ -95,5 +98,9 @@ public class TextServiceImp implements ITextService {
         if (imagtextPostDto.getUserId() == null) {
             throw new IllegalArgumentException("User ID is required.");
         }
+    }
+
+    public List<ComentaireDto> getCommentsForPost(Long postId) {
+        return commentService.getAllComentaires(postId);
     }
 }

@@ -43,7 +43,7 @@ public class TextPostDto {
     @Min(0)
     private int reactions;
 
-    private List<Long> idComments;
+    /*private List<Long> idComments;*/
 
     @NotBlank
     private String text;

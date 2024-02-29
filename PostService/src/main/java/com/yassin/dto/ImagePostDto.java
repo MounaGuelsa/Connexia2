@@ -46,8 +46,8 @@ public class ImagePostDto {
     @Min(0)
     private int reactions;
 
-    @ElementCollection
-    private List<Long> idComments;
+    /*@ElementCollection
+    private List<Long> idComments;*/
 
     @NotBlank
     private String imageUrl;

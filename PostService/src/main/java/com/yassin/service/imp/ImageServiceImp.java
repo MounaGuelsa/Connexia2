@@ -1,5 +1,7 @@
 package com.yassin.service.imp;
 
+import com.example.commentaire.dto.ComentaireDto;
+import com.example.commentaire.services.ComentaireServiceImpl;
 import com.yassin.dto.ImagePostDto;
 import com.yassin.model.ImagePost;
 import com.yassin.repo.ImagePostRepo;
@@ -20,6 +22,8 @@ public class ImageServiceImp implements IImageService {
 
     private final ModelMapper modelMapper;
     private final ImagePostRepo imagePostRepo;
+    private ComentaireServiceImpl commentService;
+
 
     @Override
     public ImagePostDto createPost(ImagePostDto imagePostDto) {
@@ -97,5 +101,9 @@ public class ImageServiceImp implements IImageService {
         if (imagePostDto.getUserId() == null) {
             throw new ValidationException("User ID is required.");
         }
+    }
+
+    public List<ComentaireDto> getCommentsForPost(Long postId) {
+        return commentService.getAllComentaires(postId);
     }
 }
