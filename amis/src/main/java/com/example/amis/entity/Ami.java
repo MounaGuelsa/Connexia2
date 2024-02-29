@@ -16,7 +16,9 @@ public class Ami {
     private Long idRecepteur;
     private Long idEmetteur;
     private Boolean accepted;
-    private  Boolean is_deleted;
+    @Column(name = "is_deleted")
+
+    private  Boolean deleted;
     private Boolean blocked;
 
 }
