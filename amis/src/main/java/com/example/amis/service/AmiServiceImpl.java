@@ -25,8 +25,9 @@ public class AmiServiceImpl implements IAmiService{
     @Override
     public AmiDto saveAmi(AmiDto amiDto) {
         Ami ami = modelMapper.map(amiDto,Ami.class);
-        Ami savedAmi =amiRepository.save(ami);
-        return modelMapper.map(savedAmi, AmiDto.class);
+        Ami savedAmi = amiRepository.save(ami);
+        return modelMapper.map(savedAmi,AmiDto.class);
+
     }
 
     @Override
@@ -47,4 +48,22 @@ public class AmiServiceImpl implements IAmiService{
     public void deleteAmi(Long id) {
         amiRepository.deleteById(id);
     }
+
+    @Override
+    public Optional<AmiDto> getEmetteur(Long idEmetteur) {
+//        Optional<Ami> amiOptional=amiRepository.findAmiByIdEmetteur(idEmetteur);
+//
+//        return amiOptional.map((ami)->modelMapper.map(ami,AmiDto.class));
+        Optional<Ami> amiOptional = amiRepository.findAmiByIdEmetteur(idEmetteur);
+
+        if (amiOptional.isPresent()) {
+            return amiOptional.map((ami) -> modelMapper.map(ami, AmiDto.class));
+        } else {
+            // Ajoutez un message explicatif ici
+            System.out.println("Aucun émetteur trouvé avec l'ID : " + idEmetteur);
+            return Optional.empty();
+        }
+    }
+
+
 }

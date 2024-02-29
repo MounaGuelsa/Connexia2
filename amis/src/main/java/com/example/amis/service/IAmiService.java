@@ -11,5 +11,6 @@ public interface IAmiService {
     List<AmiDto> getAllAmi();
     Optional<AmiDto> getAmiById(Long id);
     void deleteAmi (Long id);
+    Optional<AmiDto> getEmetteur(Long id);
 
 }
