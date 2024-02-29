@@ -37,8 +37,9 @@ public class GroupServiceImp implements GroupService {
     }
 
     @Override
-    public GroupDTO updateGroup(GroupDTO groupDTO) {
-        return modelMapper.map(groupRepository.save(modelMapper.map(groupDTO, Group.class)),GroupDTO.class);
+    public GroupDTO updateGroup(Long id ,GroupDTO groupDTO) {
+        GroupDTO groupDTO1 = modelMapper.map(groupRepository.findById(id),GroupDTO.class);
+        return modelMapper.map(groupRepository.save(modelMapper.map(groupDTO1, Group.class)),GroupDTO.class);
     }
 
     @Override
@@ -52,5 +53,10 @@ public class GroupServiceImp implements GroupService {
         groupDTO.setDeleted(Boolean.TRUE);
         Group group=groupRepository.save(modelMapper.map(groupDTO, Group.class));
         return group.getDeleted();
+    }
+
+    @Override
+    public List<GroupDTO> findAllGroupsByGroupIds(List<Long> groupIds) {
+        return null;
     }
 }

@@ -12,7 +12,7 @@ public class Group {
     private Long id;
     private String nom;
     private Long admin;
-    @Column(name="is_deleted")
+    @Column(name="is_deleted", columnDefinition = "boolean default false")
     private Boolean deleted;
     private String description;
 }
