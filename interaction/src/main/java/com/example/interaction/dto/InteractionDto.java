@@ -1,4 +1,4 @@
-package com.example.commentaire.dto;
+package com.example.interaction.dto;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
-public class ComentaireDto implements Serializable {
+public class InteractionDto implements Serializable {
     @NotNull(message = "L'identifiant ne peut pas être nul")
     Long id;
 
@@ -18,6 +18,5 @@ public class ComentaireDto implements Serializable {
 
     @NotNull(message = "L'identifiant de l'élément ne peut pas être nul")
     Long post_Id;
-    @NotNull(message = "contenu ne peut pas être nul")
-    private String content ;
+
 }
