@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-<<<<<<< HEAD
-    <data-source source="LOCAL" name="group" uuid="70b55bf0-94ca-42ee-8f7f-7dfd561f7329">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/group</jdbc-url>
-=======
-    <data-source source="LOCAL" name="authentification@localhost" uuid="6e246a3c-ba52-488a-a2ef-f81a7580e949">
+    <data-source source="LOCAL" name="group@localhost" uuid="7202b814-2f46-416a-8e40-4d6ba710882a">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/authentification</jdbc-url>
->>>>>>> 68bbca38f84a57af9de99624d20bdb404a83f003
+      <jdbc-url>jdbc:postgresql://localhost:5432/group</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="com.intellij.clouds.kubernetes.db.host.port" />
+        <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
+        <property name="com.intellij.clouds.kubernetes.db.container.port" />
+      </jdbc-additional-properties>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="group@localhost [2]" uuid="391192ff-e0f6-4f61-a556-94f648937577">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/group</jdbc-url>
       <jdbc-additional-properties>
         <property name="com.intellij.clouds.kubernetes.db.host.port" />
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />

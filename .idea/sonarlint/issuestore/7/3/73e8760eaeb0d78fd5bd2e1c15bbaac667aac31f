@@ -1,0 +1,12 @@
+
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Şï”Å8‹ô¿üŞ1
+a	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(•Òøe8‹ô¿üŞ1
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ï³ƒúÿÿÿÿ
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+V	java:S125'"<This block of commented-out lines of code should be removed.(º®Å’üÿÿÿÿ
+E	java:S106+"+Replace this use of System.out by a logger.(¾Şºÿÿÿÿÿ
+]
+java:S20943"BRemove this empty class, write its code or make it an "interface".(¦Á¦¼ıÿÿÿÿ
