@@ -7,6 +7,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 import com.yassin.model.TextPost;
@@ -36,17 +37,17 @@ public class TextPostDto {
     private Long userId;
 
     @PastOrPresent
-    @JsonFormat(pattern = "MM-dd-yyyy")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime publishDate;
 
     @Min(0)
     private int reactions;
 
-    private List<String> comments;
+    /*private List<Long> idComments;*/
 
     @NotBlank
     private String text;
 
     @NotNull
-    boolean isDeleted;
+    boolean deleted = false;
 }

@@ -1,15 +1,12 @@
-package com.example.Mantouji.dtos;
+package com.example.commentaire.dto;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 import java.io.Serializable;
 
-/**
- * DTO for {@link com.example.Mantouji.entties.Comentaire}
- */
+
 @Data
 @NoArgsConstructor
 public class ComentaireDto implements Serializable {
@@ -17,10 +14,10 @@ public class ComentaireDto implements Serializable {
     Long id;
 
     @NotNull(message = "L'identifiant du compte ne peut pas être nul")
-    Long compteId;
+    Long user_Id;
 
     @NotNull(message = "L'identifiant de l'élément ne peut pas être nul")
-    Long elementId;
+    Long post_Id;
     @NotNull(message = "contenu ne peut pas être nul")
     private String content ;
 }

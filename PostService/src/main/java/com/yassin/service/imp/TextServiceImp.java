@@ -1,16 +1,18 @@
 package com.yassin.service.imp;
 
-import com.yassin.dto.ImagePostDto;
+import com.example.commentaire.dto.ComentaireDto;
+import com.example.commentaire.services.ComentaireServiceImpl;
 import com.yassin.dto.TextPostDto;
-import com.yassin.model.ImagePost;
 import com.yassin.model.TextPost;
 import com.yassin.repo.TextPostRepo;
 import com.yassin.service.ITextService;
 import jakarta.ws.rs.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,11 +22,14 @@ public class TextServiceImp implements ITextService {
 
     private final ModelMapper modelMapper;
     private final TextPostRepo textPostRepo;
+    private ComentaireServiceImpl commentService;
+
 
     @Override
     public TextPostDto createPost(TextPostDto textPostDto) {
         validation(textPostDto);
         TextPost textPostToSave = modelMapper.map(textPostDto, TextPost.class);
+        textPostToSave.setPublishDate(LocalDateTime.now());
         TextPost textPost = textPostRepo.save(textPostToSave);
         return modelMapper.map(textPost, TextPostDto.class);
     }
@@ -93,5 +98,9 @@ public class TextServiceImp implements ITextService {
         if (imagtextPostDto.getUserId() == null) {
             throw new IllegalArgumentException("User ID is required.");
         }
+    }
+
+    public List<ComentaireDto> getCommentsForPost(Long postId) {
+        return commentService.getAllComentaires(postId);
     }
 }

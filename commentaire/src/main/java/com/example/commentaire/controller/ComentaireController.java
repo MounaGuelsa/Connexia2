@@ -1,7 +1,8 @@
-package com.example.Mantouji.controllers;
+package com.example.commentaire.controller;
 
-import com.example.Mantouji.dtos.ComentaireDto;
-import com.example.Mantouji.services.ComentaireService;
+
+import com.example.commentaire.dto.ComentaireDto;
+import com.example.commentaire.services.ComentaireService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,9 +21,9 @@ public class ComentaireController {
         this.comentaireService = comentaireService;
     }
 
-    @GetMapping
-    public ResponseEntity<List<ComentaireDto>> getAllComentaires() {
-        List<ComentaireDto> commentaires = comentaireService.getAllComentaires();
+    @GetMapping("allComment/{id}")
+    public ResponseEntity<List<ComentaireDto>> getAllComentaires(@PathVariable Long id) {
+        List<ComentaireDto> commentaires = comentaireService.getAllComentaires(id);
         return new ResponseEntity<>(commentaires, HttpStatus.OK);
     }
 

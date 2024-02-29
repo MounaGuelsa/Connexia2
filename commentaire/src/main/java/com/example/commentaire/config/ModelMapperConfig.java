@@ -1,4 +1,4 @@
-package com.example.Mantouji.config;
+package com.example.commentaire.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

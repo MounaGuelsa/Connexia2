@@ -1,6 +1,7 @@
 package com.yassin.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.ElementCollection;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -29,27 +30,32 @@ public class ImagePostDto {
     @NotNull
     private Long id;
 
-    @NotBlank
-    private String title;
-
     @NotNull
     private Long userId;
 
+    @NotBlank
+    private String title;
+
+    @NotBlank
+    private String description;
+
     @PastOrPresent
-    @JsonFormat(pattern = "MM-dd-yyyy")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime publishDate;
 
     @Min(0)
     private int reactions;
 
-    private List<String> comments;
+    /*@ElementCollection
+    private List<Long> idComments;*/
 
     @NotBlank
     private String imageUrl;
 
     @NotNull
-    private boolean isDeleted;
+    private boolean deleted = false;
 
-    @NotBlank
-    private String description;
+    @NotNull
+    private boolean shared = false;
+
 }

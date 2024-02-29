@@ -1,4 +1,11 @@
 package com.example.commentaire.repository;
 
-public interface ComentaireRepository extends org.springframework.data.jpa.repository.JpaRepository<com.example.commentaire.entity.Comentaire, java.lang.Long> {
+import com.example.commentaire.entity.Comentaire;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface ComentaireRepository extends JpaRepository<Comentaire, Long> {
+    List<Comentaire> findAllByIsdeletedFalse();
+    List<Comentaire> findAllById_post(long id );
 }
