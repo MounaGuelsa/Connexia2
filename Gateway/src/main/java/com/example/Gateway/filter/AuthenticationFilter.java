@@ -1,11 +1,11 @@
 package com.example.Gateway.filter;
 
-
 import com.example.Gateway.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
 import org.springframework.http.HttpHeaders;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -17,13 +17,14 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
     @Autowired
     private JwtUtil jwtUtil;
 
-    public AuthenticationFilter() {
+    public AuthenticationFilter( ) {
         super(Config.class);
     }
 
     @Override
     public GatewayFilter apply(Config config) {
-        return ((exchange, chain) -> {
+
+        return (exchange, chain) -> {
             if (validator.isSecured.test(exchange.getRequest())) {
                 //header contains token or not
                 if (!exchange.getRequest().getHeaders().containsKey(HttpHeaders.AUTHORIZATION)) {
@@ -38,14 +39,18 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
 //                    //REST call to AUTH service
 //                    template.getForObject("http://IDENTITY-SERVICE//validate?token" + authHeader, String.class);
                     jwtUtil.validateToken(authHeader);
-
+                     exchange
+                            .getRequest()
+                            .mutate()
+                            .header("username", jwtUtil.extractUserName(authHeader))
+                            .build();
                 } catch (Exception e) {
                     System.out.println("invalid access...!");
                     throw new RuntimeException("un authorized access to application");
                 }
             }
             return chain.filter(exchange);
-        });
+        };
     }
 
     public static class Config {
