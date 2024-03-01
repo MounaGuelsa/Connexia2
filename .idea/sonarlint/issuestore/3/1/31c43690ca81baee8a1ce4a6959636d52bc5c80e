@@ -1,8 +1,14 @@
 
+b
+java:S2259:"FA "NullPointerException" could be thrown; "getBody()" can return null.(´¯µL8·øóÎß1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8÷»‡üŞ1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ŠìäÍß1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ø»‡üŞ1
-_
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ø»‡üŞ1
-X	java:S125*"<This block of commented-out lines of code should be removed.( ùªª8ˆ¼‡üŞ1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ŠìäÍß1
+o
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8‘ìäÍß1
+o
+java:S62040"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8—ìäÍß1
+o
+java:S62046"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8™ìäÍß1
+X	java:S125<"<This block of commented-out lines of code should be removed.(ô€·€8›ìäÍß1

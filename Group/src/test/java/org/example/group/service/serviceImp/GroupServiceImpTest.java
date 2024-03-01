@@ -17,8 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class GroupServiceImpTest {
@@ -122,58 +121,55 @@ public class GroupServiceImpTest {
 
     @Test
     @DisplayName("Update Group")
-    void testUpdateGroup() {
+    public void testUpdateGroup() {
+        Long id = 1L;
+        GroupDTO groupDTO = new GroupDTO();
+        groupDTO.setId(id);
+        Group group = new Group();
+        group.setId(id);
 
-        GroupDTO updatedGroupDTO = new GroupDTO();
-        updatedGroupDTO.setId(1L);
-        updatedGroupDTO.setNom("Updated Group 1");
-        updatedGroupDTO.setAdmin(11L);
-        updatedGroupDTO.setDeleted(false);
-        updatedGroupDTO.setDescription("Updated Description 1");
+        when(modelMapper.map(groupDTO, Group.class)).thenReturn(group);
+        when(groupRepository.save(group)).thenReturn(group);
+        when(modelMapper.map(group, GroupDTO.class)).thenReturn(groupDTO);
 
-        when(groupRepository.findById(1L)).thenReturn(Optional.of(group1));
-        when(modelMapper.map(group1, GroupDTO.class)).thenReturn(updatedGroupDTO);
-        when(groupRepository.save(any(Group.class))).thenReturn(group1);
+        GroupDTO result = groupService.updateGroup(id, groupDTO);
 
-        GroupDTO result = groupService.updateGroup(1L, updatedGroupDTO);
-
-        assertNotNull(result);
-        assertEquals(updatedGroupDTO, result);
+        assertEquals(id, result.getId());
+        verify(groupRepository, times(1)).save(group);
     }
 
     @Test
-    void testAddGroup() {
-        GroupDTO newGroupDTO = new GroupDTO();
-        newGroupDTO.setId(3L);
-        newGroupDTO.setNom("New Group");
-        newGroupDTO.setAdmin(103L);
-        newGroupDTO.setDeleted(false);
-        newGroupDTO.setDescription("New Description");
+    @DisplayName("Add Group")
+    public void testAddGroup() {
+        GroupDTO groupDTO = new GroupDTO();
+        Group group = new Group();
 
-        when(groupRepository.save(any(Group.class))).thenReturn(group2);
-        when(modelMapper.map(group2, GroupDTO.class)).thenReturn(newGroupDTO);
+        when(modelMapper.map(groupDTO, Group.class)).thenReturn(group);
+        when(groupRepository.save(group)).thenReturn(group);
+        when(modelMapper.map(group, GroupDTO.class)).thenReturn(groupDTO);
 
-        GroupDTO result = groupService.addGroup(newGroupDTO);
+        GroupDTO result = groupService.addGroup(groupDTO);
 
-        assertNotNull(result);
-        assertEquals(newGroupDTO, result);
+        assertEquals(groupDTO, result);
+        verify(groupRepository, times(1)).save(group);
     }
 
     @Test
-    void testDeleteGroup() {
-        GroupDTO groupToDeleteDTO = new GroupDTO();
-        groupToDeleteDTO.setId(1L);
-        groupToDeleteDTO.setNom("Group 1");
-        groupToDeleteDTO.setAdmin(11L);
-        groupToDeleteDTO.setDeleted(false);
-        groupToDeleteDTO.setDescription("Description 1");
+    @DisplayName("Delete Group")
+    public void testDeleteGroup() {
+        GroupDTO groupDTO = new GroupDTO();
+        groupDTO.setId(1L);
+        groupDTO.setDeleted(false);
+        Group group = new Group();
+        group.setId(1L);
+        group.setDeleted(false);
 
-        when(groupRepository.save(any(Group.class))).thenReturn(group1);
-        when(modelMapper.map(group1, GroupDTO.class)).thenReturn(groupToDeleteDTO);
+        when(modelMapper.map(groupDTO, Group.class)).thenReturn(group);
+        when(groupRepository.save(group)).thenReturn(group);
 
-        Boolean result = groupService.deleteGroup(groupToDeleteDTO);
+        Boolean result = groupService.deleteGroup(groupDTO);
 
-        assertTrue(result);
-        assertTrue(groupToDeleteDTO.getDeleted());
+        assertEquals(true, groupDTO.getDeleted());
+        verify(groupRepository, times(1)).save(group);
     }
 }

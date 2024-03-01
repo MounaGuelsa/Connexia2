@@ -24,26 +24,26 @@ public class PartageController {
         List<PartageDto> partages = partageService.getAllPartages();
         return ResponseEntity.ok(partages);
     }
-    @GetMapping
+    @GetMapping("post/{id}")
     public ResponseEntity<List<PartageDto>> findAllByIdPost(@PathVariable Long id) {
         List<PartageDto> partages = partageService.findAllByIdPost(id);
         return ResponseEntity.ok(partages);
     }
-    @GetMapping
+    @GetMapping("partageurList/{id}")
     public ResponseEntity<List<PartageDto>> findAllByIdPartageur(@PathVariable Long id) {
         List<PartageDto> partages = partageService.findAllByIdPartageur(id);
         return ResponseEntity.ok(partages);
     }
     @GetMapping("/{id}")
-    public ResponseEntity<PartageDto> getPartageById(@PathVariable Long id) {
+    public ResponseEntity<PartageDto> getPartageById(@PathVariable Long id ) {
         return partageService.getPartageById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public ResponseEntity<PartageDto> savePartage(@RequestBody PartageDto partageDTO) {
-        PartageDto savedPartage = partageService.savePartage(partageDTO);
+    public ResponseEntity<PartageDto> savePartage(@RequestBody PartageDto partageDTO , @RequestHeader(name = "username") String username ) {
+        PartageDto savedPartage = partageService.savePartage(partageDTO,username);
         return new ResponseEntity<>(savedPartage, HttpStatus.CREATED);
     }
 
