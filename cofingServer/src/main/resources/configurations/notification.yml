@@ -1,0 +1,17 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    server-url :
+      defaultZone: http://localhost:8761/eureka
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/notifications
+    username: postgres
+    password: Kaiou
+  jpa:
+    hibernate:
+      ddl-auto: create
+      database: postgresql
+      database-platform: org.hibernate.dialect.PostgresSQLDialect

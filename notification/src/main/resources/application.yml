@@ -1,25 +1,26 @@
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    server-url :
-      defaultZone: http://localhost:8761/eureka
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    server-url :
+#      defaultZone: http://localhost:8761/eureka
+#
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5433/notifications
+#    username: postgres
+#    password: Kaiou
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#      database: postgresql
+#      database-platform: org.hibernate.dialect.PostgresSQLDialect
+
+  spring:
+        application:
+          name: notification
+
+        config:
+          import: optional:configserver:http://localhost:8888
 server:
   port: 8091
-spring:
-  application:
-    name: notification
-
-  config:
-    import: optional:configserver:http://localhost:8888
-
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5433/notifications
-    username: postgres
-    password: Kaiou
-  jpa:
-    hibernate:
-      ddl-auto: create
-      database: postgresql
-      database-platform: org.hibernate.dialect.PostgresSQLDialect
