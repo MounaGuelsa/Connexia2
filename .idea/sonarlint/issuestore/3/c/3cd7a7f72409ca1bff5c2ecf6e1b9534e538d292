@@ -1,2 +1,4 @@
 
-r	java:S114"QRename this interface name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ú®ÓÆøÿÿÿÿ8õ¥ŠÖÞ1
+7
+java:S1220""Move this file to a named package.8â·ê¡ß1
+X	java:S125"<This block of commented-out lines of code should be removed.(–ëÌŒ8é·ê¡ß1
