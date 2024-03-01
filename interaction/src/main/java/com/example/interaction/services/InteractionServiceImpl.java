@@ -24,8 +24,11 @@ public class InteractionServiceImpl implements InteractionService {
         this.modelMapper = modelMapper;
     }
 
-    public List<InteractionDto> getAllInteractions() {
-        List<Interaction> interactions = interactionRepository.findAllByIsdeletedFalse();
+
+
+    @Override
+    public List<InteractionDto> getAllInteractions(long id) {
+        List<Interaction> interactions = interactionRepository.findAllByPost(id);; // Supposons que tu aies un repository pour les interactions
         return interactions.stream()
                 .map(interaction -> modelMapper.map(interaction, InteractionDto.class))
                 .collect(Collectors.toList());
@@ -37,9 +40,17 @@ public class InteractionServiceImpl implements InteractionService {
     }
 
     public InteractionDto createInteraction(InteractionDto interactionDto) {
+        InteractionDto interactionDto1 ;
+        InteractionDto interactionDto2 = interactionRepository.findByPostEtUser(interactionDto.getUser_Id(),interactionDto.getPost_Id()).get();
+        if (interactionDto2 !=null){
+            interactionDto1 = updateInteraction(interactionDto2.getId() , interactionDto);
+        }
+        else {
         Interaction interaction = modelMapper.map(interactionDto, Interaction.class);
         Interaction savedInteraction = interactionRepository.save(interaction);
-        return modelMapper.map(savedInteraction, InteractionDto.class);
+            interactionDto1 = modelMapper.map(savedInteraction, InteractionDto.class);
+    }
+        return interactionDto1;
     }
 
     public InteractionDto updateInteraction(Long id, InteractionDto interactionDto) {
@@ -51,7 +62,9 @@ public class InteractionServiceImpl implements InteractionService {
         Interaction updatedInteraction = interactionRepository.save(existingInteraction);
         return modelMapper.map(updatedInteraction, InteractionDto.class);
     }
-
+  public Integer NombreInteraction(long id ){
+       return interactionRepository.NombreDesInteraction(id);
+  }
     public void deleteInteraction(Long id) {
         Interaction existingInteraction = interactionRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Interaction not found with id: " + id));

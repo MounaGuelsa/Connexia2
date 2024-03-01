@@ -21,7 +21,10 @@ public class GroupUserServiceImp implements GrouUserService {
     GroupUserRepository groupUserRepository;
     @Autowired
     ModelMapper modelMapper;
-    private GroupClient groupClient ;
+
+    @Autowired
+    private GroupClient groupClient;
+
     @Override
     public List<GroupUserDTO> showGroupUsers() {
         List<GroupUser> groups=groupUserRepository.findByDeletedFalse();
@@ -30,16 +33,21 @@ public class GroupUserServiceImp implements GrouUserService {
 
     @Override
     public List<GroupDTO> findGroupByUserId(Long userId) {
-        List<GroupDTO> groupDTOS = new ArrayList<>() ;
-        List<GroupUser> groupUsers = groupUserRepository.findGroupUserByUserId(userId);
-        List<Long> groupIds = groupUsers.stream()
-                .map(GroupUser::getGroupId)
-                .collect(Collectors.toList());
-        for (Long id : groupIds){
-            var groupDTO =  groupClient.getGroup(id);
-            groupDTOS.add(groupDTO.getBody());
+        if (groupClient != null) {
+            List<GroupDTO> groupDTOS = new ArrayList<>() ;
+            List<GroupUser> groupUsers = groupUserRepository.findGroupUserByUserId(userId);
+            List<Long> groupIds = groupUsers.stream()
+                    .map(GroupUser::getGroupId)
+                    .toList();
+            for (Long id : groupIds){
+                var groupDTO =  groupClient.getGroup(id);
+                groupDTOS.add(groupDTO.getBody());
+            }
+            return groupDTOS;
+        } else {
+            return null;
         }
-        return groupDTOS;
+
     }
 
     @Override
