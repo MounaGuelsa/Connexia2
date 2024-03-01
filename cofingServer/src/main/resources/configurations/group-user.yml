@@ -22,4 +22,6 @@ spring:
 
 server:
   port: 4441
-
+application:
+  config:
+    group-url: http://localhost:4044/group
