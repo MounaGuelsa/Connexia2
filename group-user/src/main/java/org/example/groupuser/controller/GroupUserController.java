@@ -32,9 +32,9 @@ public class GroupUserController {
         GroupUserDTO groupUserDTO=groupUserServiceImp.getGroupUserById(group_user_id);
         return new ResponseEntity<>(groupUserDTO, HttpStatus.OK);
     }
-    @PostMapping("/add")
-    public ResponseEntity<GroupUserDTO> addGroupUser(@RequestBody GroupUserDTO groupUserDTO){
-        GroupUserDTO group=groupUserServiceImp.addGroupUser(groupUserDTO);
+    @PostMapping("/add-member")
+    public ResponseEntity<GroupUserDTO> addGroupUser(@RequestBody GroupUserDTO groupUserDTO, @RequestHeader(name = "id_user") long id_user){
+        GroupUserDTO group=groupUserServiceImp.addMember(groupUserDTO, id_user);
         return new ResponseEntity<>(group, HttpStatus.CREATED);
     }
 //    @PutMapping("/update")
