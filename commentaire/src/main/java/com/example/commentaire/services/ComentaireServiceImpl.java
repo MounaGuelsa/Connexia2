@@ -41,12 +41,16 @@ public class ComentaireServiceImpl implements ComentaireService {
         return modelMapper.map(savedComentaire, ComentaireDto.class);
     }
     @Override
-    public ComentaireDto updateComentaire(Long id, ComentaireDto comentaireDto) {
+ /*   public ComentaireDto updateComentaire(Long id, ComentaireDto comentaireDto) {
         Comentaire existingComentaire = comentaireRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Comentaire not found with id: " + id));
         existingComentaire.setContent(comentaireDto.getContent());
         Comentaire updatedComentaire = comentaireRepository.save(existingComentaire);
         return modelMapper.map(updatedComentaire, ComentaireDto.class);
+    }*/
+    public ComentaireDto updateComentaire(Long id, ComentaireDto comentaireDto) {
+        comentaireDto.setId(id);
+        return modelMapper.map(comentaireRepository.save(modelMapper.map(comentaireDto, Comentaire.class)), ComentaireDto.class);
     }
     @Override
     public void deleteComentaire(Long id) {
