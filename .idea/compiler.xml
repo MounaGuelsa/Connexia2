@@ -15,12 +15,12 @@
         <module name="PostService" />
         <module name="group-user" />
         <module name="identity-service" />
-        <module name="users" />
         <module name="discorver" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="AuthentificationService" target="17" />
+      <module name="users" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

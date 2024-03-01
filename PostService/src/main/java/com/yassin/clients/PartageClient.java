@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface PartageClient {
     @GetMapping("/{id}")
-    public ResponseEntity<PartageDto> getPartageById(@PathVariable Long id);
+     ResponseEntity<PartageDto> getPartageById(@PathVariable Long id);
 }
