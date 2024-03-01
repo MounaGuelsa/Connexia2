@@ -1,5 +1,6 @@
 package org.example.group.controller;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import org.example.group.dto.GroupDTO;
 import org.example.group.service.serviceImp.GroupServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,19 +22,25 @@ public class GroupController {
         List<GroupDTO> groupDTOS=groupServiceImp.showGroups();
         return new ResponseEntity<>(groupDTOS, HttpStatus.OK);
     }
+    @GetMapping("/find-groups-by-admin-id/{adminId}")
+    public ResponseEntity<List<GroupDTO>> findGroupByAdmin(@PathVariable Long adminId){
+        List<GroupDTO> groupDTOS=groupServiceImp.findGroupByAdmin(adminId);
+        return new ResponseEntity<>(groupDTOS, HttpStatus.OK);
+    }
     @GetMapping("/{id}")
     public ResponseEntity<GroupDTO> getGroup(@PathVariable(value = "id") Long group_id){
         GroupDTO groupDTO=groupServiceImp.getGroupById(group_id);
         return new ResponseEntity<>(groupDTO, HttpStatus.OK);
     }
     @PostMapping("/add")
-    public ResponseEntity<GroupDTO> addGroup(@RequestBody GroupDTO groupDTO){
+    public ResponseEntity<GroupDTO> addGroup(@RequestBody GroupDTO groupDTO, @RequestHeader(name = "id_user") long admin){
+        groupDTO.setAdmin(admin);
         GroupDTO group=groupServiceImp.addGroup(groupDTO);
         return new ResponseEntity<>(group, HttpStatus.CREATED);
     }
-    @PutMapping("/update")
-    public ResponseEntity<GroupDTO> updateGroup(@RequestBody GroupDTO groupDTO){
-        GroupDTO group=groupServiceImp.updateGroup(groupDTO);
+    @PutMapping("/update/{id}")
+    public ResponseEntity<GroupDTO> updateGroup(@RequestBody GroupDTO groupDTO, @PathVariable Long id){
+        GroupDTO group=groupServiceImp.updateGroup(id, groupDTO);
         return new ResponseEntity<>(group, HttpStatus.OK);
     }
     @DeleteMapping("delete/{id}")

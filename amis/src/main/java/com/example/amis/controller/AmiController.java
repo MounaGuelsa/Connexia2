@@ -20,7 +20,8 @@ public class AmiController {
         this.iAmiService = iAmiService;
     }
     @PostMapping("/save")
-    public ResponseEntity<AmiDto> saveAmi(@RequestBody AmiDto amiDto){
+    public ResponseEntity<AmiDto> saveAmi(@RequestBody AmiDto amiDto ,@RequestHeader(name = "id") long id ){
+        amiDto.setIdEmetteur(id);
         AmiDto savedAmi = iAmiService.saveAmi(amiDto);
         return new ResponseEntity<>(savedAmi, HttpStatus.CREATED);
     }
@@ -39,6 +40,12 @@ public class AmiController {
     public ResponseEntity<Void> deleteAmi(@PathVariable Long id){
         iAmiService.deleteAmi(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+    @GetMapping("/emetteur/{id}")
+    public ResponseEntity<AmiDto>getEmetteurById(@PathVariable Long id){
+        Optional<AmiDto> optionalAmiDto =iAmiService.getEmetteur(id);
+        return optionalAmiDto.map(amiDto -> new ResponseEntity<>(amiDto,HttpStatus.OK))
+                .orElseGet(()-> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
 }
