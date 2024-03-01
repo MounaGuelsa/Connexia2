@@ -7,5 +7,5 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(name = "notification",path = "http://localhost:8088/notifications")
 public interface NotificatonClient {
     @PostMapping("/save")
-     ResponseEntity<NotificationDto> saveNotification(@RequestBody NotificationDto notificationDto);
+    ResponseEntity<NotificationDto> saveNotification(@RequestBody NotificationDto notificationDto);
 }

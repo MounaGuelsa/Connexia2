@@ -62,13 +62,7 @@ public class GroupUserServiceImp implements GrouUserService {
 //    }
 
     @Override
-    public GroupUserDTO addMember(GroupUserDTO groupUserDTO, Long id_userA) {
-        Long id_group = groupUserDTO.getGroupId();
-        Long id_user = groupUserDTO.getUserId();
-
-        if(id_group== 0){
-
-        }
+    public GroupUserDTO addGroupUser(GroupUserDTO groupUserDTO) {
         GroupUser groupUser=groupUserRepository.save(modelMapper.map(groupUserDTO, GroupUser.class));
         return modelMapper.map(groupUser, GroupUserDTO.class);
     }

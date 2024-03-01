@@ -14,7 +14,4 @@ import java.util.List;
 public interface GroupClient {
     @GetMapping("/{id}")
     ResponseEntity<GroupDTO> getGroup(@PathVariable(value = "id") Long group_id);
-
-    @GetMapping("/find-groups-by-admin-id/{adminId}")
-    ResponseEntity<List<GroupDTO>> findGroupByAdmin(@PathVariable Long adminId);
 }

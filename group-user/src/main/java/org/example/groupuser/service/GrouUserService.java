@@ -10,7 +10,7 @@ public interface GrouUserService {
     List<GroupDTO> findGroupByUserId(Long userId);
     GroupUserDTO getGroupUserById(Long id);
 //    GroupUserDTO updateGroupUser(GroupUserDTO groupUserDTO);
-    GroupUserDTO addMember(GroupUserDTO groupUserDTO, Long id_user);
+    GroupUserDTO addGroupUser(GroupUserDTO groupUserDTO);
     Boolean deleteGroupUser(GroupUserDTO groupUserDTO);
 
 }
