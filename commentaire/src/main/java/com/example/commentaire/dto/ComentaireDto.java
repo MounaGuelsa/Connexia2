@@ -14,10 +14,10 @@ public class ComentaireDto implements Serializable {
     Long id;
 
     @NotNull(message = "L'identifiant du compte ne peut pas être nul")
-    Long user_Id;
+    Long id_compte;
 
     @NotNull(message = "L'identifiant de l'élément ne peut pas être nul")
-    Long post_Id;
+    Long id_post;
     @NotNull(message = "contenu ne peut pas être nul")
     private String content ;
 }

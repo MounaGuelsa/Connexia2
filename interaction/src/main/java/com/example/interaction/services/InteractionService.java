@@ -8,6 +8,9 @@ import com.example.interaction.entity.Interaction;
 import java.util.List;
 
 public interface InteractionService {
+    default List<InteractionDto> getAllInteractions(long id){
+        return null;
+    }
     default List<InteractionDto> getAllInteractions(){
         return null;
     }

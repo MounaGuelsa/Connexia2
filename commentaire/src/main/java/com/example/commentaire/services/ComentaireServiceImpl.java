@@ -23,7 +23,7 @@ public class ComentaireServiceImpl implements ComentaireService {
         this.modelMapper = modelMapper;
     }
     @Override
-    public List<ComentaireDto> getAllComentaires(long id) {
+    public List<ComentaireDto> getAllComentairesByidPost(long id) {
         List<Comentaire> comentaires = comentaireRepository.findAllById_post(id);
         return comentaires.stream()
                 .map(comentaire -> modelMapper.map(comentaire, ComentaireDto.class))
@@ -44,9 +44,7 @@ public class ComentaireServiceImpl implements ComentaireService {
     public ComentaireDto updateComentaire(Long id, ComentaireDto comentaireDto) {
         Comentaire existingComentaire = comentaireRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Comentaire not found with id: " + id));
-
-        // Update existingComentaire with fields from comentaireDto
-
+        existingComentaire.setContent(comentaireDto.getContent());
         Comentaire updatedComentaire = comentaireRepository.save(existingComentaire);
         return modelMapper.map(updatedComentaire, ComentaireDto.class);
     }
