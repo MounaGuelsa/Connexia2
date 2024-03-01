@@ -1,6 +1,7 @@
 package com.example.amis.controller;
 
 import com.example.amis.dto.AmiDto;
+import com.example.amis.entity.Ami;
 import com.example.amis.service.IAmiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -47,5 +48,26 @@ public class AmiController {
         return optionalAmiDto.map(amiDto -> new ResponseEntity<>(amiDto,HttpStatus.OK))
                 .orElseGet(()-> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+    @GetMapping("/accepter/{idAmi}")
+    public ResponseEntity<Ami> accepterDemandeAmi(@PathVariable Long idAmi) {
+        Ami ami = iAmiService.accepterDemandeAmi(idAmi);
+        if (ami != null) {
+            return new ResponseEntity<>(ami, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+    @PostMapping("/ajouter")
+    public ResponseEntity<AmiDto> ajouterAmi(@RequestBody AmiDto amiDto) {
+        AmiDto amiAjoute = iAmiService.ajouterAmi(amiDto.getIdRecepteur(), amiDto.getIdEmetteur());
+        return new ResponseEntity<>(amiAjoute, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/amis-acceptes/{id}")
+    public ResponseEntity<List<UserCrednetial>> getAllAcceptedAmis(@PathVariable Long id) {
+        List<UserCrednetial> amisAcceptes = iAmiService.getAllAcceptedAmis(id);
+        return new ResponseEntity<>(amisAcceptes, HttpStatus.OK);
+    }
+}
 
 }

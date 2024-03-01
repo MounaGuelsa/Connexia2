@@ -1,5 +1,6 @@
 package com.example.amis.service;
 
+import com.example.amis.clients.AuthClient;
 import com.example.amis.dto.AmiDto;
 import com.example.amis.entity.Ami;
 
@@ -14,6 +15,8 @@ public interface IAmiService {
     Optional<AmiDto> getEmetteur(Long id);
     Ami accepterDemandeAmi(Long idAmi) ;
     AmiDto ajouterAmi(Long idRecepteur, Long idEmetteur);
+    List<AuthClient> getAllAcceptedAmis(Long idEmetteur);
+
 
 
 }
