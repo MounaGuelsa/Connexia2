@@ -1,5 +1,6 @@
 package org.example.group.service.serviceImp;
 
+import jakarta.ws.rs.NotFoundException;
 import org.example.group.dto.GroupDTO;
 import org.example.group.entity.Group;
 import org.example.group.repository.GroupRepository;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -33,13 +35,19 @@ public class GroupServiceImp implements GroupService {
 
     @Override
     public GroupDTO getGroupById(Long id) {
-        return modelMapper.map(groupRepository.findById(id),GroupDTO.class);
+        Optional<Group> groupOptional = groupRepository.findById(id);
+        if (groupOptional.isPresent()) {
+            Group group = groupOptional.get();
+            return modelMapper.map(group, GroupDTO.class);
+        } else {
+            throw new NotFoundException("Group not found with id: " + id);
+        }
     }
 
     @Override
     public GroupDTO updateGroup(Long id ,GroupDTO groupDTO) {
-        GroupDTO groupDTO1 = modelMapper.map(groupRepository.findById(id),GroupDTO.class);
-        return modelMapper.map(groupRepository.save(modelMapper.map(groupDTO1, Group.class)),GroupDTO.class);
+        groupDTO.setId(id);
+        return modelMapper.map(groupRepository.save(modelMapper.map(groupDTO, Group.class)),GroupDTO.class);
     }
 
     @Override
