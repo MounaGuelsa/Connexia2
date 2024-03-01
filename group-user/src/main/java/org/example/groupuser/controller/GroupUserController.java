@@ -1,5 +1,6 @@
 package org.example.groupuser.controller;
 
+import org.example.group.dto.GroupDTO;
 import org.example.groupuser.dto.GroupUserDTO;
 import org.example.groupuser.service.serviceImp.GroupUserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,8 @@ public class GroupUserController {
         return new ResponseEntity<>(groupUserDTOS, HttpStatus.OK);
     }
     @GetMapping("/find-group-id-by-user-id/{userId}")
-    public ResponseEntity<List<Long>> findGroupByUserId(@PathVariable Long userId){
-        List<Long> groups=groupUserServiceImp.findGroupByUserId(userId);
+    public ResponseEntity<List<GroupDTO>> findGroupByUserId(@PathVariable Long userId){
+        List<GroupDTO> groups=groupUserServiceImp.findGroupByUserId(userId);
         return new ResponseEntity<>(groups, HttpStatus.OK);
     }
     @GetMapping("/{id}")

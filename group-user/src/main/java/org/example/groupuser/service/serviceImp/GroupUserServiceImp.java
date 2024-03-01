@@ -1,6 +1,7 @@
 package org.example.groupuser.service.serviceImp;
 
-import org.example.groupuser.config.ModelMapperConfig;
+import org.example.group.dto.GroupDTO;
+import org.example.groupuser.clients.GroupClient;
 import org.example.groupuser.dto.GroupUserDTO;
 import org.example.groupuser.entity.GroupUser;
 import org.example.groupuser.repository.GroupUserRepository;
@@ -9,6 +10,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,6 +21,7 @@ public class GroupUserServiceImp implements GrouUserService {
     GroupUserRepository groupUserRepository;
     @Autowired
     ModelMapper modelMapper;
+    private GroupClient groupClient ;
     @Override
     public List<GroupUserDTO> showGroupUsers() {
         List<GroupUser> groups=groupUserRepository.findByDeletedFalse();
@@ -26,12 +29,17 @@ public class GroupUserServiceImp implements GrouUserService {
     }
 
     @Override
-    public List<Long> findGroupByUserId(Long userId) {
+    public List<GroupDTO> findGroupByUserId(Long userId) {
+        List<GroupDTO> groupDTOS = new ArrayList<>() ;
         List<GroupUser> groupUsers = groupUserRepository.findGroupUserByUserId(userId);
         List<Long> groupIds = groupUsers.stream()
                 .map(GroupUser::getGroupId)
                 .collect(Collectors.toList());
-        return groupIds;
+        for (Long id : groupIds){
+            var groupDTO =  groupClient.getGroup(id);
+            groupDTOS.add(groupDTO.getBody());
+        }
+        return groupDTOS;
     }
 
     @Override
