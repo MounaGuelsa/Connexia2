@@ -21,9 +21,9 @@ public class ComentaireController {
         this.comentaireService = comentaireService;
     }
 
-    @GetMapping("allComment/{id}")
-    public ResponseEntity<List<ComentaireDto>> getAllComentaires(@PathVariable Long id) {
-        List<ComentaireDto> commentaires = comentaireService.getAllComentaires(id);
+    @GetMapping("allCommentByPost/{id}")
+    public ResponseEntity<List<ComentaireDto>> getAllComentairesByPost(@PathVariable Long id) {
+        List<ComentaireDto> commentaires = comentaireService.getAllComentairesByidPost(id);
         return new ResponseEntity<>(commentaires, HttpStatus.OK);
     }
 

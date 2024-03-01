@@ -1,1 +1,5 @@
-
+spring:
+  application:
+    name: interaction
+  config:
+    import: optional:configserver:http://localhost:8086/
