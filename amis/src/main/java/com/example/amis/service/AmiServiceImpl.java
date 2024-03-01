@@ -65,5 +65,25 @@ public class AmiServiceImpl implements IAmiService{
         }
     }
 
+    @Override
+    public Ami accepterDemandeAmi(Long idAmi) {
+        Ami ami = amiRepository.findById(idAmi).orElse(null);
+        if (ami != null) {
+            ami.setAccepted(true);
+            return amiRepository.save(ami);
+        }
+        return null;
+    }
+    @Override
+    public AmiDto ajouterAmi(Long idRecepteur, Long idEmetteur) {
+        AmiDto ami = new AmiDto();
+        ami.setIdRecepteur(idRecepteur);
+        ami.setIdEmetteur(idEmetteur);
+        ami.setAccepted(false);
+        ami.setDeleted(false);
+        ami.setBlocked(false);
+        return saveAmi(ami);
+    }
+
 
 }

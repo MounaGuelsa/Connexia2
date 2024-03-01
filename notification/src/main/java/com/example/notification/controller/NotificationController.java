@@ -22,9 +22,9 @@ public class NotificationController {
 
     }
     @DeleteMapping("/{id}")
-    public  ResponseEntity<Void>deleteNotification(@PathVariable Long id){
+    public  ResponseEntity<String>deleteNotification(@PathVariable Long id){
         iNotificationService.deleteNotification(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>("Notification supprimée avec succès",HttpStatus.NO_CONTENT);
 
     }
 }

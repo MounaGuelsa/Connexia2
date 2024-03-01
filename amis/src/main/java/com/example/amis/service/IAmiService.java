@@ -12,5 +12,8 @@ public interface IAmiService {
     Optional<AmiDto> getAmiById(Long id);
     void deleteAmi (Long id);
     Optional<AmiDto> getEmetteur(Long id);
+    Ami accepterDemandeAmi(Long idAmi) ;
+    AmiDto ajouterAmi(Long idRecepteur, Long idEmetteur);
+
 
 }
