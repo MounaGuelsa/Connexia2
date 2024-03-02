@@ -1,8 +1,10 @@
 package com.example.commentaire.services;
 
+import com.example.commentaire.Client.NotificatonClient;
 import com.example.commentaire.dto.ComentaireDto;
 import com.example.commentaire.entity.Comentaire;
 import com.example.commentaire.repository.ComentaireRepository;
+import com.example.notification.dto.NotificationDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,7 @@ public class ComentaireServiceImpl implements ComentaireService {
 
     private final ComentaireRepository comentaireRepository;
     private final ModelMapper modelMapper;
+//    private NotificatonClient notificatonClient ;
 
     @Autowired
     public ComentaireServiceImpl(ComentaireRepository comentaireRepository, ModelMapper modelMapper) {
