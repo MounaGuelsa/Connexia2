@@ -100,7 +100,7 @@ public class TextServiceImp implements ITextService {
         }
     }
 
-    public List<ComentaireDto> getCommentsForPost(Long postId) {
-        return commentService.getAllComentaires(postId);
-    }
+//    public List<ComentaireDto> getCommentsForPost(Long postId) {
+//        return commentService.getAllComentaires(postId);
+//    }
 }

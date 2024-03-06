@@ -1,0 +1,14 @@
+
+o
+java:S6204H"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8’ğØà1
+o
+java:S6204P"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8ğØà1
+N
+java:S1874Y"3Remove this use of "StringUtils"; it is deprecated.(´Ùª¦ÿÿÿÿÿ
+H
+java:S1874]"3Remove this use of "StringUtils"; it is deprecated.(ØêÚ3
+I
+java:S1874a"3Remove this use of "StringUtils"; it is deprecated.(¶ßŸ•
+]	java:S125j"<This block of commented-out lines of code should be removed.(õúÆ¸úÿÿÿÿ8Ãø¡‹à1
+b
+java:S1128"FRemove this unused import 'com.example.commentaire.dto.ComentaireDto'.(ÆØ€8½ğØà1

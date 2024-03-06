@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 
-@FeignClient(name = "auth", url = "${application.config.students-url}")
+@FeignClient(name = "IDENTITY-SERVICE", url = "${application.config.students-url}")
 public interface AuthClient {
 
     @GetMapping("/getUserByName")

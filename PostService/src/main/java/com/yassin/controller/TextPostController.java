@@ -33,10 +33,10 @@ public class TextPostController {
         return new ResponseEntity<>(textService.createPost(textPostDto), HttpStatus.CREATED);
     }
 
-    @GetMapping("/posts/{postId}/comments")
-    public List<ComentaireDto> getCommentsForPost(@PathVariable Long postId) {
-        return textService.getCommentsForPost(postId);
-    }
+//    @GetMapping("/posts/{postId}/comments")
+//    public List<ComentaireDto> getCommentsForPost(@PathVariable Long postId) {
+//        return textService.getCommentsForPost(postId);
+//    }
 
     @PutMapping("/{postId}")
     public ResponseEntity<TextPostDto> updatePost(@PathVariable Long postId, @RequestBody TextPostDto textPostDto) {

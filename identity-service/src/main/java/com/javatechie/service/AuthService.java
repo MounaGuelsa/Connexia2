@@ -32,6 +32,7 @@ public class AuthService {
     public void validateToken(String token) {
         jwtService.validateToken(token);
     }
+
     public Optional<UserCredential> getUserById(Long id) {
         Optional<UserCredential> userOptional = repository.findById(Math.toIntExact(id));
         return userOptional;

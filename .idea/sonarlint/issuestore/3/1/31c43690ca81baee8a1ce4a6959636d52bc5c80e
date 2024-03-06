@@ -1,17 +1,10 @@
 
-b
-java:S2259G"FA "NullPointerException" could be thrown; "getBody()" can return null.(¥ØµL8‚Õ∂‘ﬂ1
-c
-java:S22594"FA "NullPointerException" could be thrown; "getBody()" can return null.(¨„ƒä8·Õ∂‘ﬂ1
+W	java:S125"<This block of commented-out lines of code should be removed.(ñ¸É8‰øÉã‡1
+X	java:S125	"<This block of commented-out lines of code should be removed.(–îûé8á™Éã‡1
 _
 java:S6813"BRemove this field injection and use constructor injection instead.(ÍÊƒﬁ8„Õ∂‘ﬂ1
 _
 java:S6813"BRemove this field injection and use constructor injection instead.(ÍÊƒﬁ8„Õ∂‘ﬂ1
-o
-java:S6204'"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(™ô®π8ÍÕ∂‘ﬂ1
-o
-java:S6204="RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(™ô®π8ÒÕ∂‘ﬂ1
-o
-java:S6204C"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(™ô®π8ÛÕ∂‘ﬂ1
-W
-java:S2209S"5Change this instance-reference to a static reference.(Ñ”˝´˚ˇˇˇˇ8¯Õ∂‘ﬂ1
+X	java:S125 "<This block of commented-out lines of code should be removed.(êòÔ°8√ÙÇã‡1
+X	java:S1255"<This block of commented-out lines of code should be removed.(Ú÷á∂8Ê—Çã‡1
+]	java:S125N"<This block of commented-out lines of code should be removed.(ÓÔÄÙ˘ˇˇˇˇ8ª¨Çã‡1

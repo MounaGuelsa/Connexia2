@@ -36,10 +36,10 @@ public class ImagePostController {
         return new ResponseEntity<>(imageService.getPostById(postId), HttpStatus.OK);
     }
 
-    @GetMapping("/posts/{postId}/comments")
-    public List<ComentaireDto> getCommentsForPost(@PathVariable Long postId) {
-        return imageService.getCommentsForPost(postId);
-    }
+//    @GetMapping("/posts/{postId}/comments")
+//    public List<ComentaireDto> getCommentsForPost(@PathVariable Long postId) {
+//        return imageService.getCommentsForPost(postId);
+//    }
 
     @PutMapping("/{postId}")
     public ResponseEntity<ImagePostDto> updatePost(@PathVariable Long postId, @RequestBody ImagePostDto imagePostDto) {

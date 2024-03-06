@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 
 @RestController
+
 @RequestMapping(value = "/group-user")
 public class GroupUserController {
     @Autowired

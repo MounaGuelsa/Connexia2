@@ -24,6 +24,6 @@
 #    students-url:
 spring:
   application:
-    name: amis
+    name: ami
   config:
-    import: optional:configserver:http://localhost:8888
+    import: optional:configserver:http://localhost:8086

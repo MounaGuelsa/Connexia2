@@ -38,7 +38,8 @@ public class ComentaireController {
     }
 
     @PostMapping
-    public ResponseEntity<ComentaireDto> createComentaire(@RequestBody ComentaireDto comentaireDto) {
+    public ResponseEntity<ComentaireDto> createComentaire(@RequestBody ComentaireDto comentaireDto , @RequestHeader("id_user") long id) {
+        comentaireDto.setId_compte(id);
         ComentaireDto createdComentaire = comentaireService.createComentaire(comentaireDto);
         return new ResponseEntity<>(createdComentaire, HttpStatus.CREATED);
     }

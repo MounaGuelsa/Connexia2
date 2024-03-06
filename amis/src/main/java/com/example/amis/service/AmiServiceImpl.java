@@ -4,6 +4,7 @@ import com.example.amis.clients.AuthClient;
 import com.example.amis.dto.AmiDto;
 import com.example.amis.entity.Ami;
 import com.example.amis.repository.AmiRepository;
+import com.javatechie.entity.UserCredential;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -89,22 +90,22 @@ public class AmiServiceImpl implements IAmiService{
     }
 
     @Override
-    public List<AuthClient> getAllAcceptedAmis(Long id) {
+    public List<UserCredential> getAllAcceptedAmis(Long id) {
         List<Ami> amis = amiRepository.findAllByIdEmetteurAndAcceptedTrueAndDeletedFalseAndBlockedFalse(id);
         List<Ami> amis2 = amiRepository.findAllByIdRecepteurAndAcceptedTrueAndDeletedFalseAndBlockedFalse(id);
 
-        List<UserCrednetial> amisUsers = new ArrayList<>();
+        List<UserCredential> amisUsers = new ArrayList<>();
 
         for (Ami ami : amis) {
             Long idRecepteur = ami.getIdRecepteur();
-            UserCrednetial amiRecepteur = authClient.getUserById(idRecepteur).getBody();
+            UserCredential amiRecepteur = authClient.getUserById(idRecepteur).getBody();
             if (amiRecepteur != null) {
                 amisUsers.add(amiRecepteur);
             }
         }
         for (Ami ami :amis2){
             Long idEmetteur =ami.getIdEmetteur();
-            UserCrednetial amiEmetteur = authClient.getUserById(idEmetteur).getBody();
+            UserCredential amiEmetteur = authClient.getUserById(idEmetteur).getBody();
             if (amiEmetteur != null ){
                 amisUsers.add(amiEmetteur);
             }

@@ -14,8 +14,10 @@
         <module name="Gateway" />
         <module name="PostService" />
         <module name="group-user" />
+        <module name="interaction" />
         <module name="amis" />
         <module name="identity-service" />
+        <module name="commentaire" />
         <module name="discorver" />
       </profile>
     </annotationProcessing>
@@ -32,9 +34,11 @@
       <module name="PostService" options="-parameters" />
       <module name="amis" options="-parameters" />
       <module name="cofingServer" options="-parameters" />
+      <module name="commentaire" options="-parameters" />
       <module name="discorver" options="-parameters" />
       <module name="group-user" options="-parameters" />
       <module name="identity-service" options="-parameters" />
+      <module name="interaction" options="-parameters" />
       <module name="notification" options="-parameters" />
       <module name="partage" options="-parameters" />
       <module name="users" options="-parameters" />

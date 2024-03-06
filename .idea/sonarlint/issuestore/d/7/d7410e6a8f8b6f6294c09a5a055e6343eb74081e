@@ -1,0 +1,11 @@
+
+
+java:S1319/"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(˜ó´åûÿÿÿÿ8¨šûà1
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò‘”¼8©šûà1
+r	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜ó´åûÿÿÿÿ8©šûà1
+E
+java:S54112"(Use a primitive boolean expression here.(ºşõ¤8ªšûà1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Çšûà1
+c
+java:S1128"FRemove this unused import 'com.fasterxml.jackson.annotation.JsonView'.(Â„Ê¬8İšûà1

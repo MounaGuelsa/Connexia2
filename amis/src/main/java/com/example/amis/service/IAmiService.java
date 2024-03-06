@@ -1,8 +1,8 @@
 package com.example.amis.service;
 
-import com.example.amis.clients.AuthClient;
 import com.example.amis.dto.AmiDto;
 import com.example.amis.entity.Ami;
+import com.javatechie.entity.UserCredential;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,7 +15,7 @@ public interface IAmiService {
     Optional<AmiDto> getEmetteur(Long id);
     Ami accepterDemandeAmi(Long idAmi) ;
     AmiDto ajouterAmi(Long idRecepteur, Long idEmetteur);
-    List<AuthClient> getAllAcceptedAmis(Long idEmetteur);
+    List<UserCredential> getAllAcceptedAmis(Long idEmetteur);
 
 
 

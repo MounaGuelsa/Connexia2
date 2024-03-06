@@ -3,6 +3,7 @@ package com.example.amis.controller;
 import com.example.amis.dto.AmiDto;
 import com.example.amis.entity.Ami;
 import com.example.amis.service.IAmiService;
+import com.javatechie.entity.UserCredential;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -64,10 +65,10 @@ public class AmiController {
     }
 
     @GetMapping("/amis-acceptes/{id}")
-    public ResponseEntity<List<UserCrednetial>> getAllAcceptedAmis(@PathVariable Long id) {
-        List<UserCrednetial> amisAcceptes = iAmiService.getAllAcceptedAmis(id);
+    public ResponseEntity<List<UserCredential>> getAllAcceptedAmis(@PathVariable Long id) {
+        List<UserCredential> amisAcceptes = iAmiService.getAllAcceptedAmis(id);
         return new ResponseEntity<>(amisAcceptes, HttpStatus.OK);
     }
 }
 
-}
+

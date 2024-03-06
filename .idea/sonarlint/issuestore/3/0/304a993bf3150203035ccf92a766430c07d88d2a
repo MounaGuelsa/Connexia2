@@ -1,0 +1,9 @@
+
+o
+java:S6204*"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8´§Ûóß1
+G
+java:S16110"1Remove the parentheses around the "ami" parameter(Ú’»Ù
+P	java:S125:"<This block of commented-out lines of code should be removed.(¥ÌÇ
+G
+java:S1611@"1Remove the parentheses around the "ami" parameter(Ú’»Ù
+@	java:S106C"+Replace this use of System.out by a logger.(ñÉÖî

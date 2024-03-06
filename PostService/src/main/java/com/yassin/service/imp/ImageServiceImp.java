@@ -103,7 +103,7 @@ public class ImageServiceImp implements IImageService {
         }
     }
 
-    public List<ComentaireDto> getCommentsForPost(Long postId) {
-        return commentService.getAllComentaires(postId);
-    }
+//    public List<ComentaireDto> getCommentsForPost(Long postId) {
+//        return commentService.getAllComentaires(postId);
+//    }
 }

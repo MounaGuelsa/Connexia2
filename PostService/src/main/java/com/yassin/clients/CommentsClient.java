@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 
-@FeignClient(path = "http://localhost:8092")
+@FeignClient(name = "cc",path = "http://localhost:8092")
 public interface CommentsClient {
     @GetMapping("/comments/post/{postId}")
     List<ComentaireDto> getCommentsByPostId(@PathVariable Long postId);
