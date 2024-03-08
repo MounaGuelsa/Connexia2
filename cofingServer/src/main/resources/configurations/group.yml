@@ -19,7 +19,25 @@ spring:
       repositories:
         enabled: true
 
+
+kafka:
+  bootstrap-servers=broker:29092:
 server:
   port: 4044
+
+# Kafka Properties
+  kafka:
+    bootstrap-servers: localhost:9092
+    template:
+      default-topic: notificationTopic
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    properties:
+      spring:
+        json:
+          type:
+            mapping: event:com.example.notification.dto.groupevent
+
 
 

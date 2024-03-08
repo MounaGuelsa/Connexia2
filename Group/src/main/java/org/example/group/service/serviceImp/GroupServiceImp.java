@@ -3,10 +3,12 @@ package org.example.group.service.serviceImp;
 import jakarta.ws.rs.NotFoundException;
 import org.example.group.dto.GroupDTO;
 import org.example.group.entity.Group;
+import org.example.group.event.groupevent;
 import org.example.group.repository.GroupRepository;
 import org.example.group.service.GroupService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +22,12 @@ public class GroupServiceImp implements GroupService {
     GroupRepository groupRepository;
     @Autowired
     ModelMapper modelMapper;
+
+    private final KafkaTemplate<String, groupevent> kafkaTemplate;
+
+    public GroupServiceImp(KafkaTemplate<String, groupevent> kafkaTemplate) {
+        this.kafkaTemplate = kafkaTemplate;
+    }
 
     @Override
     public List<GroupDTO> showGroups() {
@@ -53,6 +61,7 @@ public class GroupServiceImp implements GroupService {
     @Override
     public GroupDTO addGroup(GroupDTO groupDTO) {
         Group group=groupRepository.save(modelMapper.map(groupDTO, Group.class));
+        kafkaTemplate.send("notificationTopic", new groupevent(group.getId().toString()));
         return modelMapper.map(group, GroupDTO.class);
     }
 
