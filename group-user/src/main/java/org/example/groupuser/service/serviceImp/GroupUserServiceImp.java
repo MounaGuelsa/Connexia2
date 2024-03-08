@@ -1,5 +1,6 @@
 package org.example.groupuser.service.serviceImp;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.example.group.dto.GroupDTO;
 import org.example.groupuser.clients.GroupClient;
 import org.example.groupuser.dto.GroupUserDTO;
@@ -8,6 +9,9 @@ import org.example.groupuser.repository.GroupUserRepository;
 import org.example.groupuser.service.GrouUserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -31,7 +35,9 @@ public class GroupUserServiceImp implements GrouUserService {
         return groups.stream().map(g->modelMapper.map(g,GroupUserDTO.class)).collect(Collectors.toList());
     }
 
+
     @Override
+    @CircuitBreaker(name="getGroup",fallbackMethod = "getGroupFallBack")
     public List<GroupDTO> findGroupByUserId(Long userId) {
         if (groupClient != null) {
             List<GroupDTO> groupDTOS = new ArrayList<>() ;
@@ -47,7 +53,10 @@ public class GroupUserServiceImp implements GrouUserService {
         } else {
             return null;
         }
-
+    }
+    public ResponseEntity<String> getGroupFallBack(Exception e)
+    {
+        return new ResponseEntity<>("get groupService is down", HttpStatus.OK);
     }
 
     @Override

@@ -79,3 +79,15 @@ m
 =amis/src/test/java/com/example/amis/AmisApplicationTests.java,8\d\8df61af4064353860aa3059d586ffa0967ba9092
 s
 Camis/src/test/java/com/example/amis/serviceTest/AmiServiceTest.java,9\8\98a2d3a3bc6f00865b75b4f2726e26fa3d777878
+=
+Group/pom.xml,0\d\0d16243feca0b5a2f89971d8b3de3f28b4645696
+}
+MGroup/src/main/java/org/example/group/service/serviceImp/GroupServiceImp.java,9\1\915b3c06d91c8ed10ef55872df0adef4d9fa54db
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+B
+docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
+C
+group-user/mvnw.cmd,d\0\d0fe27c323a5a6a2e47fd947950f95acb3500deb
