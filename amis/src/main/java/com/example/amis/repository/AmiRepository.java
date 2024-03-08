@@ -11,6 +11,7 @@ import java.util.Optional;
 @Repository
 public interface AmiRepository extends JpaRepository<Ami,Long> {
     Optional<Ami> findAmiByIdEmetteur (Long idEmetteur);
+
     List<Ami> findAllByIdEmetteurAndAcceptedTrueAndDeletedFalseAndBlockedFalse(Long idEmetteur);
     List<Ami> findAllByIdRecepteurAndAcceptedTrueAndDeletedFalseAndBlockedFalse(Long idRecepteur);
     List<Ami> findAllByIdRecepteur(Long idRecepteur);

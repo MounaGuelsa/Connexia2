@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 public class AmiServiceImpl implements IAmiService{
     private final AmiRepository amiRepository;
     private final ModelMapper modelMapper;
+
     AuthClient authClient;
 
     @Autowired

@@ -18,6 +18,7 @@
         <option value="$PROJECT_DIR$/amis/pom.xml" />
         <option value="$PROJECT_DIR$/interaction/pom.xml" />
         <option value="$PROJECT_DIR$/commentaire/pom.xml" />
+        <option value="$PROJECT_DIR$/BaseDomain/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

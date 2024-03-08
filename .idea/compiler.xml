@@ -7,18 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Group" />
+        <module name="PostService" />
+        <module name="BaseDomain" />
+        <module name="group-user" />
+        <module name="discorver" />
         <module name="cofingServer" />
         <module name="partage" />
-        <module name="Group" />
         <module name="notification" />
         <module name="Gateway" />
-        <module name="PostService" />
-        <module name="group-user" />
         <module name="interaction" />
         <module name="amis" />
         <module name="identity-service" />
         <module name="commentaire" />
-        <module name="discorver" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -29,6 +30,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="AuthentificationService" options="-parameters" />
+      <module name="BaseDomain" options="-parameters" />
       <module name="Gateway" options="-parameters" />
       <module name="Group" options="-parameters" />
       <module name="PostService" options="-parameters" />
