@@ -1,0 +1,184 @@
+version: '3.1'
+
+services:
+  users-db:
+    container_name: users-microservice-db
+    image: postgres:16
+    environment:
+      POSTGRES_USER: users_microservice
+      POSTGRES_PASSWORD: users_microservice
+      PGDATA: /data/postgres
+    volumes:
+      - users-db:/data/postgres
+    ports:
+      - "5228:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+  login-db:
+    container_name: authentification-microservice-db
+    image: postgres:16
+    environment:
+      POSTGRES_USER: authentification_microservice
+      POSTGRES_PASSWORD: authentification_microservice
+      PGDATA: /data/postgres
+    volumes:
+      - login-db:/data/postgres
+    ports:
+      - "5227:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+  share-db:
+    container_name: partage-microservice-db
+    image: postgres:16
+    environment:
+      POSTGRES_USER: partage_microservice
+      POSTGRES_PASSWORD: partage_microservice
+      PGDATA: /data/postgres
+    volumes:
+      - share-db:/data/postgres
+    ports:
+      - "5225:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+  notification-db:
+    container_name: notification-microservicedb
+    image: postgres:16
+    environment:
+      POSTGRES_USER: notification_microservice
+      POSTGRES_PASSWORD: notification_microservice
+      PGDATA: /data/postgres
+    volumes:
+      - notification-db:/data/postgres
+    ports:
+      - "5224:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+  interaction-db:
+    container_name: interaction-microservice-db
+    image: postgres:16
+    environment:
+      POSTGRES_USER: interaction_microservice
+      POSTGRES_PASSWORD: interaction_microservice
+      PGDATA: /data/postgres
+    volumes:
+      - interaction-db:/data/postgres
+    ports:
+      - "5226:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+  group-db:
+    container_name: group-microservicedb
+    image: postgres:16
+    environment:
+      POSTGRES_USER: group_microservice
+      POSTGRES_PASSWORD: group_microservice
+      PGDATA: /data/postgres
+    volumes:
+      - group-db:/data/postgres
+    ports:
+      - "5223:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+  groupuser-db:
+    container_name: groupuser-microservice-db
+    image: postgres:16
+    environment:
+      POSTGRES_USER: groupuser_microservice
+      POSTGRES_PASSWORD: groupuser_microservice
+      PGDATA: /data/postgres
+    volumes:
+      - groupuser-db:/data/postgres
+    ports:
+      - "5222:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+  ami-db:
+    container_name: ami-microservice-db
+    image: postgres:16
+    environment:
+      POSTGRES_USER: ami_microservice
+      POSTGRES_PASSWORD: ami_microservice
+      PGDATA: /data/postgres
+    volumes:
+      - ami-db:/data/postgres
+    ports:
+      - "5229:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+  commantaire-db:
+    container_name: commantaire-microservice-db
+    image: postgres:16
+    environment:
+      POSTGRES_USER: commantaire_microservice
+      POSTGRES_PASSWORD: commantaire_microservice
+      PGDATA: /data/postgres
+    volumes:
+      - commantaire-db:/data/postgres
+    ports:
+      - "5230:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+  identity-db:
+    container_name: identity-microservice-db
+    image: postgres:16
+    environment:
+      POSTGRES_USER: identity_microservice
+      POSTGRES_PASSWORD: identity_microservice
+      PGDATA: /data/postgres
+    volumes:
+      - identity-db:/data/postgres
+    ports:
+      - "5231:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+  zipkin:
+    container_name: zipkin
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
+    networks:
+      - zipkin
+
+
+
+
+
+networks:
+  db:
+    driver: bridge
+  zipkin:
+      driver: bridge
+
+volumes:
+  users-db:
+  login-db:
+  share-db:
+  notification-db:
+  interaction-db:
+  group-db:
+  groupuser-db:
+  ami-db:
+  commantaire-db:
+  identity-db:
+
+
