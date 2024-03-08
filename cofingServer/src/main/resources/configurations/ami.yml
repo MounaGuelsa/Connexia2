@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/authentification
-    username: postgres
-    password: newlife@22
+    url: jdbc:postgresql://localhost:5229/ami_microservice
+    username: ami_microservice
+    password: ami_microservice
   jpa:
     show-sql: true
     properties:
@@ -19,5 +19,5 @@ eureka:
     service-url:
       defaultZone : http://localhost:8761/eureka/
 server:
-  port: 8097
+  port: 8099
 

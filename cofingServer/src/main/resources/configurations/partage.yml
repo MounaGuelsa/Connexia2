@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/partage
-    username: postgres
-    password: newlife@22
+    url: jdbc:postgresql://localhost:5225/partage_microservice
+    username: partage_microservice
+    password: partage_microservice
   jpa:
     show-sql: true
     properties:
