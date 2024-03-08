@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/users
-    username: postgres
-    password: newlife@22
+    url: jdbc:postgresql://localhost:5228/users_microservice
+    username: users_microservice
+    password: users_microservice
   jpa:
     show-sql: true
     properties:

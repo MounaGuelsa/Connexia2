@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/authentification
-    username: postgres
-    password: newlife@22
+    url: jdbc:postgresql://localhost:5226/interaction_microservice
+    username: interaction_microservice
+    password: interaction_microservice
   jpa:
     show-sql: true
     properties:

@@ -5,9 +5,9 @@ eureka:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/authentification
-    username: postgres
-    password: newlife@22
+    url: jdbc:postgresql://localhost:5222/groupuser_microservice
+    username: groupuser_microservice
+    password: groupuser_microservice
   jpa:
     show-sql: true
     properties:

@@ -4,9 +4,9 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/authentification
-    username: postgres
-    password: newlife@22
+    url: jdbc:postgresql://localhost:5223/group_microservice
+    username: group_microservice
+    password: group_microservice
   jpa:
     show-sql: true
     properties:
@@ -21,4 +21,5 @@ spring:
 
 server:
   port: 4044
+
 
